@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "synthetic_demo": true,
+  "objects": [
+    {
+      "type": "table",
+      "name": "item",
+      "table": "item",
+      "ddl_sha256": "abb6183b85ee3e0ba5e17007975b07db5462dfa8afeab6401700ac2be69a4fae",
+      "introspection": "schema only"
+    },
+    {
+      "type": "table",
+      "name": "note",
+      "table": "note",
+      "ddl_sha256": "1cef6a8d5c413682533946edba9f6bba6eb78f90d520a5f100432f38581588c7",
+      "introspection": "schema only"
+    }
+  ],
+  "columns": [
+    {
+      "table": "item",
+      "column": "id",
+      "type": "INTEGER",
+      "not_null": false,
+      "has_default": false,
+      "primary_key_position": 1,
+      "hidden": 0
+    },
+    {
+      "table": "item",
+      "column": "label",
+      "type": "TEXT",
+      "not_null": false,
+      "has_default": false,
+      "primary_key_position": 0,
+      "hidden": 0
+    },
+    {
+      "table": "item",
+      "column": "tag",
+      "type": "TEXT",
+      "not_null": false,
+      "has_default": false,
+      "primary_key_position": 0,
+      "hidden": 0
+    },
+    {
+      "table": "note",
+      "column": "id",
+      "type": "INTEGER",
+      "not_null": false,
+      "has_default": false,
+      "primary_key_position": 1,
+      "hidden": 0
+    },
+    {
+      "table": "note",
+      "column": "item_id",
+      "type": "INTEGER",
+      "not_null": false,
+      "has_default": false,
+      "primary_key_position": 0,
+      "hidden": 0
+    }
+  ],
+  "foreign_keys": [
+    {
+      "table": "note",
+      "id": 0,
+      "sequence": 0,
+      "target_table": "item",
+      "from_column": "item_id",
+      "to_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "NO ACTION"
+    }
+  ],
+  "changes": [
+    {
+      "type": "table",
+      "name": "item",
+      "change": "ddl_changed"
+    },
+    {
+      "type": "table",
+      "name": "note",
+      "change": "added"
+    }
+  ],
+  "comparison_requested": true,
+  "finding_count": 2,
+  "boundary": "No row data/default literals exported. DDL hashes can change for formatting alone. Zero changes is not migration safety. Virtual table introspection skipped; use closed trusted snapshots."
+}
